@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jackson David Alberto | Aerospace Systems Engineer</title>
+  <meta name="description" content="USC aerospace systems engineer portfolio featuring LEAP propulsion research, spacecraft autonomy, robotics, and controls." />
+  <style>
+    :root{
+      --card:#ffffff;
+      --bg:#faf7f4;
+      --text:#111827;
+      --muted:#5b6472;
+      --brand:#990000;
+      --brand2:#6e0000;
+      --line:#e7e2dc;
+      --shadow:0 18px 50px rgba(17,24,39,.08);
+      --radius:28px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top, rgba(153,0,0,.10), transparent 28%),
+        linear-gradient(180deg, #fffdfb 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background:rgba(255,255,255,.78);
+      border-bottom:1px solid rgba(231,226,220,.85);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 0}
+    .brand-block small{display:block; text-transform:uppercase; letter-spacing:.24em; color:var(--brand); font-weight:800; font-size:.72rem}
+    .brand-block strong{display:block; margin-top:2px; font-size:.98rem}
+    .nav-links{display:flex; gap:20px; flex-wrap:wrap; color:var(--muted); font-weight:600; font-size:.95rem}
+    .nav-links a:hover{color:var(--brand)}
+
+    .hero{padding:34px 0 16px}
+    .hero-grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:24px; align-items:stretch}
+    .card{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-copy{padding:34px}
+    .tags{display:flex; flex-wrap:wrap; gap:10px}
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 14px; border-radius:999px;
+      background:rgba(153,0,0,.06); color:var(--brand2);
+      border:1px solid rgba(153,0,0,.18);
+      font-size:.82rem; font-weight:700;
+    }
+    h1{font-size:clamp(2.5rem, 5vw, 4.6rem); line-height:1.02; margin:18px 0 14px; letter-spacing:-.04em}
+    .subtitle{font-size:1.12rem; color:#2c3340; max-width:58ch; margin:0 0 16px}
+    .summary{color:var(--muted); max-width:66ch; margin:0 0 24px; font-size:1rem}
+    .actions{display:flex; flex-wrap:wrap; gap:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:13px 18px; border-radius:999px; font-weight:800; font-size:.95rem;
+      border:1px solid transparent; transition:.2s ease;
+    }
+    .btn.primary{background:var(--brand); color:#fff}
+    .btn.primary:hover{background:var(--brand2)}
+    .btn.secondary{border-color:#d6d2cd; background:#fff; color:#303746}
+    .btn.secondary:hover{border-color:var(--brand); color:var(--brand)}
+
+    .hero-photo{display:flex; flex-direction:column}
+    .photo-frame{position:relative; flex:1; min-height:560px; background:#d8d1c8}
+    .photo-frame img{width:100%; height:100%; object-fit:cover; object-position:center 18%}
+    .photo-overlay{
+      position:absolute; inset:auto 18px 18px 18px;
+      background:rgba(17,24,39,.62); color:#fff; padding:14px 16px;
+      border-radius:18px; font-size:.92rem; backdrop-filter:blur(8px)
+    }
+
+    .section{padding:26px 0 10px}
+    .section h2{font-size:clamp(1.7rem, 3vw, 2.6rem); margin:0 0 8px; letter-spacing:-.03em}
+    .section p.lead{margin:0 0 20px; color:var(--muted); max-width:70ch}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .panel{padding:24px}
+    .panel h3{margin:0 0 8px; font-size:1.2rem}
+    .meta{color:var(--muted); font-size:.93rem}
+    ul.clean{margin:14px 0 0; padding:0; list-style:none}
+    ul.clean li{padding:10px 0; border-top:1px solid #f0ece8}
+    ul.clean li:first-child{border-top:none; padding-top:0}
+    .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+    .pill{padding:7px 11px; border-radius:999px; background:#f5f5f4; border:1px solid #e8e5df; font-size:.82rem; font-weight:650}
+    .item{display:flex; gap:14px; align-items:flex-start}
+    .icon{
+      width:42px; height:42px; border-radius:14px; background:rgba(153,0,0,.10); color:var(--brand);
+      display:grid; place-items:center; font-weight:900; flex:none;
+    }
+    .eyebrow{display:block; text-transform:uppercase; letter-spacing:.22em; color:var(--brand); font-weight:800; font-size:.72rem; margin-bottom:8px}
+    .subtle{color:var(--muted)}
+    .link{color:var(--brand); font-weight:800}
+    .link:hover{text-decoration:underline}
+    .foot{padding:30px 0 50px; color:var(--muted); font-size:.92rem}
+    .small-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+
+    @media (max-width: 980px){
+      .hero-grid,.grid-2,.grid-3,.small-grid{grid-template-columns:1fr}
+      .photo-frame{min-height:460px}
+    }
+    @media (max-width: 640px){
+      .hero-copy,.panel{padding:20px}
+      .nav-links{gap:12px; font-size:.88rem}
+      h1{font-size:2.55rem}
+      .subtitle{font-size:1.02rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand-block">
+        <small>USC Portfolio</small>
+        <strong>Jackson David Alberto</strong>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-copy">
+          <div class="tags">
+            <span class="tag">Aerospace Systems Engineer</span>
+            <span class="tag">Autonomous Spacecraft</span>
+            <span class="tag">Space Robotics</span>
+            <span class="tag">Advanced Propulsion</span>
+          </div>
+          <h1>Jackson David Alberto</h1>
+          <p class="subtitle">Aerospace Systems Engineer focused on spacecraft autonomy, Model Predictive Control, on-orbit assembly, and electric propulsion.</p>
+          <p class="summary">Master’s graduate from the University of Southern California with research and engineering experience across LEAP propulsion testing, ISI/SERC spacecraft mass-property simulation, industrial automation, robotics instruction, and hardware development.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:jdalbert@usc.edu">Email Me</a>
+            <a class="btn secondary" href="https://github.com/JDA0077" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/jackson-david-alberto-101a27207" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card hero-photo">
+          <div class="photo-frame">
+            <img src="IMG_0030.JPG" alt="Jackson David Alberto in a propulsion laboratory" />
+            <div class="photo-overlay">In the Laboratory for Exploration and Astronautical Physics (LEAP), working around propulsion hardware and vacuum test equipment.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <span class="eyebrow">Biography</span>
+      <h2>About me</h2>
+      <p class="lead">My work combines aerospace engineering, robotics, control theory, and practical hardware development. My experience spans industrial automation, university teaching, spacecraft control research, autonomous assembly technologies, and propulsion research at LEAP.</p>
+      <div class="card panel">
+        <p style="margin:0;color:var(--text)">I am an engineer with a background that bridges mechatronics, mechanical engineering, aerospace systems, and experimental propulsion. I enjoy work that connects modeling with hardware, especially when it supports spacecraft autonomy, electric propulsion, and future in-space manufacturing systems.</p>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <span class="eyebrow">Research</span>
+      <h2>LEAP and spacecraft autonomy</h2>
+      <p class="lead">A dedicated research section makes the site look more like a graduate research portfolio and less like a standard résumé.</p>
+      <div class="grid-2">
+        <div class="card panel">
+          <div class="item">
+            <div class="icon">1</div>
+            <div>
+              <h3>Laboratory for Exploration and Astronautical Physics (LEAP)</h3>
+              <p class="meta">Graduate Researcher · May 2026 – Present</p>
+              <ul class="clean">
+                <li>Conducted and tested ionic liquid electrospray thruster prototypes.</li>
+                <li>Ran emission experiments and computational analyses for high-density, gridless emitter-array architectures.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card panel">
+          <div class="item">
+            <div class="icon">2</div>
+            <div>
+              <h3>ISI / SERC</h3>
+              <p class="meta">Adjunct Research Assistant · Aug 2025 – Present</p>
+              <ul class="clean">
+                <li>Built spacecraft mass-property simulations for centralized and distributed MPC.</li>
+                <li>Supported autonomous assembly and ISAM-focused modeling work.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <span class="eyebrow">Experience</span>
+      <h2>Professional background</h2>
+      <div class="grid-3">
+        <div class="card panel">
+          <h3>USC</h3>
+          <p class="meta">Course Producer / TA · Sep 2025 – May 2026</p>
+          <ul class="clean"><li>Supported Advanced Spacecraft Propulsion and physical gas dynamics.</li></ul>
+        </div>
+        <div class="card panel">
+          <h3>Unotech LDA</h3>
+          <p class="meta">Automation Engineer · Jan 2020 – Oct 2021</p>
+          <ul class="clean"><li>Directed automation projects and handled PLC/SCADA and electromechanical maintenance.</li></ul>
+        </div>
+        <div class="card panel">
+          <h3>Teaching Roles</h3>
+          <p class="meta">Piaget University / Oscar Ribas University</p>
+          <ul class="clean"><li>Taught thermodynamics and robotics while contributing to lab projects.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <span class="eyebrow">Projects</span>
+      <h2>Featured work</h2>
+      <div class="grid-2">
+        <div class="card panel">
+          <h3>Centralized MPC for Multi-Agent Assembly of Space Structures</h3>
+          <p class="subtle">Developed nonlinear equations of motion for modular space structures and a centralized MPC framework.</p>
+          <div class="pill-row">
+            <span class="pill">MuJoCo</span><span class="pill">MPC</span><span class="pill">Space Robotics</span><span class="pill">ISAM</span>
+          </div>
+        </div>
+        <div class="card panel">
+          <h3>Floatbot In-Space Manufacturing Testbed</h3>
+          <p class="subtle">Designed a near-frictionless platform that mimics orbital assembly dynamics for validation experiments.</p>
+          <div class="pill-row">
+            <span class="pill">Hardware</span><span class="pill">Testing</span><span class="pill">Docking</span><span class="pill">Assembly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="eyebrow">Publications</span>
+      <h2>Publication highlight</h2>
+      <div class="card panel">
+        <h3>Centralized Model Predictive Control for Multi-Agent Assembly of Space Structures</h3>
+        <p class="meta">AIAA / ARC Washington · Co-author · Apr 2026 – May 2026</p>
+        <a class="link" href="https://arc.aiaa.org/doi/10.2514/6.2026-3035" target="_blank" rel="noreferrer">Read paper</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="eyebrow">Skills</span>
+      <h2>Technical toolkit</h2>
+      <div class="small-grid">
+        <div class="card panel">
+          <h3>Programming & Simulation</h3>
+          <p class="subtle">Python, MATLAB, C++, Java, MuJoCo, optimization, dynamic modeling</p>
+        </div>
+        <div class="card panel">
+          <h3>Aerospace & Controls</h3>
+          <p class="subtle">Orbital mechanics, propulsion, GNC, MPC, LQR, spacecraft design</p>
+        </div>
+        <div class="card panel">
+          <h3>Automation</h3>
+          <p class="subtle">PLC, SCADA, HMI, VFD, sensors, closed-loop control</p>
+        </div>
+        <div class="card panel">
+          <h3>Tools</h3>
+          <p class="subtle">Linux, NX, Microsoft Office, troubleshooting, fabrication, data acquisition</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <span class="eyebrow">Contact</span>
+      <h2>Let’s connect</h2>
+      <div class="card panel">
+        <p style="margin-top:0">Email: <a class="link" href="mailto:jdalbert@usc.edu">jdalbert@usc.edu</a></p>
+        <p class="subtle" style="margin-bottom:0">GitHub: <a class="link" href="https://github.com/JDA0077" target="_blank" rel="noreferrer">github.com/JDA0077</a> · LinkedIn: <a class="link" href="https://www.linkedin.com/in/jackson-david-alberto-101a27207" target="_blank" rel="noreferrer">LinkedIn profile</a></p>
+      </div>
+    </section>
+
+    <div class="foot">Built as a single-file portfolio site. Replace or expand any section as your career story evolves.</div>
+  </main>
+</body>
+</html>
